@@ -1,4 +1,8 @@
 // Assignment Code
+var capLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+var lowLetters = ["abcdefghijklmnopqrstuvwxyz"]
+var specSymbols = ["!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"]
+
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
