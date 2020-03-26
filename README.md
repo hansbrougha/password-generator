@@ -19,10 +19,16 @@ GIVEN I need a new, secure password
 
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
+    UpperCase?
+    Lowercase?
+    Special characters?
 
 
 WHEN prompted for password criteria
 THEN I select which criteria to include in the password
+    
+    for if confirm math random?
+
 
 
 WHEN prompted for the length of the password
