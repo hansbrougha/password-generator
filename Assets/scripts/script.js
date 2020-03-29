@@ -1,9 +1,9 @@
 // Assignment Code
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowerCase = "abcdefghijklmnopqrstuvwxyz0123456789";
-var numbers = "1234567890";
-var specChar = "!$%&'()*+,-./:;<=>?@[]^_`{|}~";
-var password = "";
+var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","RS","T","U","V","W","X","Y","Z"];
+var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var numbers = ["1","2","3","4","5","6","7","8","9","0"];
+var specChar = ["!","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"];
+var password = [];
 
 //Generate Password
 function generatePassword(){
@@ -23,16 +23,16 @@ function generatePassword(){
     prompt("Error: Please choose a valid complexity between 8 and 128 characters.");
 
   if (wantsUpper === true) {
-    charBank.push(upperCase);
+    charBank = charBank.concat(upperCase);
   } //Pushes upperCase string to charbank.
   if (wantsLower === true) {
-    charBank.push(lowerCase);
+    charBank = charBank.concat(lowerCase);
   }//Pushes lowerCase string to charBank.
   if (wantsSpecial === true) {
-    charBank.push(specChar);
+    charBank = charBank.concat(specChar);
   } //Pushes specChar string to charBank.
   if (wantsNumbers === true) {
-    charBank.push(numbers);
+    charBank = charBank.concat(numbers);
   } //Pushes numbers string to charBank.
 
   //Validates contents of charBank.
@@ -40,10 +40,12 @@ function generatePassword(){
 
 
 //For Loop. Random numbers from charBank up to number specified by user.
-for (var i = 0; i < charBank.length; i++) {
+//
+for (var i = 0; i < totalChar; i++) {
   password = password + charBank[Math.floor(Math.random() * charBank.length)];
 }
 console.log(password);
+return password;
 }
 
 // Assignment Code
@@ -51,8 +53,9 @@ var generateBtn = document.querySelector("#generate");
 
 
 // Write password to the #password input
-function writePassword(password) {
-  var password = generatePassword();
+function writePassword() {
+
+  var password = generatePassword(password);
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
