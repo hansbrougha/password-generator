@@ -3,11 +3,11 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz0123456789";
 var numbers = "1234567890";
 var specChar = "!$%&'()*+,-./:;<=>?@[]^_`{|}~";
-
 var password = "";
 
 //Prompts user to choose Password Complexity from 8-128.
 var totalChar = prompt("Choose Your Password Complexity: Please type a number between 8 and 128.");//What if a user selects smaller or larger numbers?
+console.log(totalChar);
 
 //User chooses or rejects upper-case
 var wantsUpper = confirm("Would you Like to include upper-case letters?");
@@ -19,7 +19,7 @@ var wantsNumbers = confirm("Would you like to include numbers?");
 var wantsSpecial = confirm("Would you like to include special characters?");
 
 // Randomize Character sequence
-var charBank = [];
+var charBank = []
 
 //Pushes upperCase string to charbank.
 if (wantsUpper === true) {
@@ -45,9 +45,10 @@ if (wantsNumbers === true) {
 console.log(charBank);
 
 //For Loop. Random numbers from charBank up to number specified by user.
-for (var i = 0; i <= charBank; i++) {
-  password = password + values.charBank(Math.floor(Math.random() * Math.floor(value.length - 1)));
+for (var i = 0; i < charBank.length; i++) {
+  password = password + charBank[Math.floor(Math.random() * charBank.length)];
 }
+console.log(password);
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
